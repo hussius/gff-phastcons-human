@@ -24,8 +24,7 @@ for line in open(infile):
         continue
     fields = line.strip().split()
     if informat=="bed":
-        pass
-        # Not implemented
+        sys.exit("BED not implemented yet, sorry.")
     else:
         assert(informat=="gff")
         (chr, start, end, pept) = (fields[0], fields[3], fields[4], fields[8])
