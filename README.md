@@ -16,3 +16,8 @@ This is only needed the first time. Afterwards, you can just use the `summarizeB
 After this is finished, you can use the `summarizeBigWig.py` Python script to summarize the conservation scores per regions with a command like this (which uses the gff3 file in this GitHub repo)
 
 `python summarizeBigWig.py A431_novel_peptides.2017.gff3 wigFiles out_A431.txt`
+
+TODO:
+
+Determine whether the PARENT or ID tag is more relevant.
+Include the post-processing script?
