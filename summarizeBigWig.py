@@ -28,8 +28,8 @@ for line in open(infile):
     else:
         assert(informat=="gff")
         (chr, start, end, pept) = (fields[0], fields[3], fields[4], fields[8])
-    if not pept.startswith("ID="): continue
-    pept = pept[3:] # Remove "ID="
+    if not pept.startswith("Parent="): continue
+    pept = pept[7:] # Remove "Parent="
     cmd_str = 'bigWigSummary -type=max ' + wigdir + '/' + chr + '.bw ' + chr + ' ' + start + ' ' + end + ' 1'
     max_c=subprocess.check_output(cmd_str, shell=True).decode().strip()
     cmd_str2 = 'bigWigSummary -type=mean ' + wigdir + '/' + chr + '.bw ' + chr + ' ' + start + ' ' + end + ' 1'
