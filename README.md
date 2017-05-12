@@ -17,7 +17,8 @@ After this is finished, you can use the `summarizeBigWig.py` Python script to su
 
 `python summarizeBigWig.py A431_novel_peptides.2017.gff3 wigFiles out_A431.txt`
 
-TODO:
+In addition, if you have multiple entries per ID, you can collapse these by using another Python script:
 
-Determine whether the PARENT or ID tag is more relevant.
-Include the post-processing script?
+`python post_process_conservation.py out_A431.txt > collapsed_A431.txt`
+
+
