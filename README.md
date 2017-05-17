@@ -9,7 +9,7 @@ If you want to score your regions without downloading anything, which is conveni
 
 In that case, you have to install the pyBigWig library by, for example, BioConda.
 
-conda install -c bioconda pybigwig
+`conda install -c bioconda pybigwig`
 
 You may want to do it in a conda virtual environment. If the above does not work, please refer to [pyBigWig's GitHub page](https://github.com/dpryan79/pyBigWig).
 
