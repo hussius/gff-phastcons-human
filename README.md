@@ -5,7 +5,7 @@ Use the scripts here to calculate maximal and mean PhastCons46way scores for GFF
 
 # Scoring without downloading files (recommended)
 
-If you want to score your regions without downloading anything, which is convenient, you can use the `summarizeBigWig_remote.py` script, which is based on the [nice pyBigWig library](https://github.com/dpryan79/pyBigWig) by Devon Ryan. This script works by opening a remote connection to `http://hgdownload.cse.ucsc.edu/goldenPath/hg19/phastCons100way/`
+If you want to score your regions without downloading anything, which is convenient, you can use the `summarizeBigWig_remote.py` script, which is based on the [nice pyBigWig library](https://github.com/dpryan79/pyBigWig) by Devon Ryan. This script works by opening a remote connection to `http://hgdownload.cse.ucsc.edu/goldenPath/hg19/phastCons100way/hg19.100way.phastCons.bw`. Note that this is the 100-way PhastCons, as opposed to the recipe below which uses 46-way. This is because we have only found a whole-genome bw file for the 100-way version.
 
 In that case, you have to install the pyBigWig library by, for example, BioConda.
 
@@ -30,7 +30,7 @@ On the command line (e.g. in a terminal), run
 This is only needed the first time. Afterwards, you can just use the `summarizeBigWig.py` Python script. The `setup.sh` script will:
 
 - Attempt to install the UCSC wigToBigWig and bigWigSummary executables via BioConda
-- Create a directory called wigFiles to where PhastCons wig files will be downloaded and converted to bigWig
+- Create a directory called wigFiles to where PhastCons wig files will be downloaded and converted to bigWig (note: by default, 46-way files will be used, but you can change the path to download [100-way files](http://hgdownload.cse.ucsc.edu/goldenPath/hg19/phastCons100way/hg19.100way.phastCons/) instead)
 - Download the PhastCons wig files, extract them, and convert them to bigWig.
 
 After this is finished, you can use the `summarizeBigWig.py` Python script to summarize the conservation scores per regions with a command like this (which uses the gff3 file in this GitHub repo)
