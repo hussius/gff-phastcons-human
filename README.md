@@ -1,9 +1,9 @@
 # gff-phastcons-human
 Use the scripts here to calculate maximal and mean PhastCons46way scores for GFF files of human genomic regions.
 
-## Usage
+# Usage
 
-# Scoring without downloading files (recommended)
+## Scoring without downloading files (recommended)
 
 If you want to score your regions without downloading anything, which is convenient, you can use the `summarizeBigWig_remote.py` script, which is based on the [nice pyBigWig library](https://github.com/dpryan79/pyBigWig) by Devon Ryan. This script works by opening a remote connection to `http://hgdownload.cse.ucsc.edu/goldenPath/hg19/phastCons100way/hg19.100way.phastCons.bw`. Note that this is the 100-way PhastCons, as opposed to the recipe below which uses 46-way. This is because we have only found a whole-genome bw file for the 100-way version.
 
@@ -19,7 +19,7 @@ Then, you can score entries in a GFF file with a command like this (using the ex
 
 The script will take a while to run, but it prints output that hopefully gives an idea about how long it will take.
 
-# Scoring with downloaded files
+## Scoring with downloaded files
 
 In some scenarios (maybe the remote bigWig file moves or you have problems installing pyBigWig for some reason) you can use the following recipe to do the scoring based on downloading wig files. 
 
@@ -37,7 +37,7 @@ After this is finished, you can use the `summarizeBigWig.py` Python script to su
 
 `python summarizeBigWig.py A431_novel_peptides.2017.gff3 wigFiles out_A431.txt`
 
-## Post-processing
+# Post-processing
 
 In addition, if you have multiple entries per ID, you can collapse these by using another Python script:
 
